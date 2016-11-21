@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">   
+    <h:head>
+        <title>Kikérdező</title>
+        <h:outputStylesheet name="baseStyle.css" />
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="resources/css/baseStyle.css" />
+    </h:head>
+    <h:body>
+        <h:form id="mainForm">
+            <div class="menuDiv">                
+                <h3>Szótanulás</h3>
+                <div class="insideMenuDiv">
+                <h:button  class="button" value="Kikérdezés" outcome="KategValaszto.xhtml" />
+                <br/>                       
+                <br/>  
+                <br/>                                   
+                 <h:button  class="button" value="Szófelvitel" outcome="szofelvitel.xhtml" />
+                <br/>           
+                <br/>  
+                <br/> 
+                <h:button  class="button" value="Összes szó" outcome="osszesszo.xhtml" />
+                <br/>           
+                <br/>  
+                 <h:button  class="button" value="Egy szó" outcome="oneword.xhtml" />
+                <br/>           
+                <br/>   
+                <h:button  class="button" value="Szó törlése" outcome="torles.xhtml" />
+                <br/>           
+                <br/>  
+               <h:button  class="button" value="Szó módosítása" outcome="update.xhtml" />
+                <br/>           
+                <br/>  
+               <h:button  class="button" value="Fájl feltöltés" outcome="feltolt.xhtml" />
+                <br/>           
+                <br/> 
+                </div> 
+            </div>
+        </h:form>
+    </h:body>
+</html>

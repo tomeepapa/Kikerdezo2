@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<root>
+    
+<!--    <navigation-rule>
+        <from-view-id>Datumbekero3.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{HetiOsszesitoBugsController.createSupportListByDate}</from-action>
+            <from-outcome>SupportLista</from-outcome>
+            <to-view-id>SupportLista.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>-->
+
+
+</root>

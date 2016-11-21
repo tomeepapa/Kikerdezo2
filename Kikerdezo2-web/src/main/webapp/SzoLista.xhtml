@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+    <head>
+        <title>Szavak</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body>
+        <h:form id="mainForm" >
+            <h1 align="center">Kategória szavai</h1>
+<!--            <h:dataTable id="szotable" value="#{selectedByCateg.selectedCategWords}" var="selectedSzavak">
+                <h:column id="magyar1">
+                    <h:outputText value="#{selectedSzavak.hMean1}"></h:outputText>
+                </h:column>    
+                
+                <h:column id="idegen">
+                    <h:outputText value="#{selectedSzavak.fMean}"></h:outputText>
+                </h:column>               
+            </h:dataTable>  -->
+            
+            <p>Idegen jelentés: #{selectedByCateg.actualQuestion.getfMean()}</p>              
+            <p>Add meg kérlek a magyar jelentést!</p>
+            <h:inputText  value="#{selectedByCateg.answer}" required="true"/>          
+            <br/>     
+            <br/> 
+            <h:commandButton value="Mehet" class="button" action="#{selectedByCateg.nextQuestion()}" />    
+            <p>Jó válaszok száma: #{selectedByCateg.goodAnws}</p>
+        </h:form>        
+    </h:body>
+</html>

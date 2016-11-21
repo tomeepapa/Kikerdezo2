@@ -1,0 +1,21 @@
+<Context>
+
+<Resource name="jdbc/Kikerdezo"
+
+auth="Container"
+
+type="javax.sql.DataSource"
+
+username="tomee"
+
+password="root"
+
+driverClassName="com.mysql.jdbc.Driver"
+
+url="jdbc:mysql:/localhost:3306/Kikerdezo"
+
+maxActive="15"
+
+maxIdle="3"/>
+
+</Context>

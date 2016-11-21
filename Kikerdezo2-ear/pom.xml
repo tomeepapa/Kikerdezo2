@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.danubiusinfo</groupId>
+    <artifactId>Kikerdezo2-ear</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>ear</packaging>
+    <name>Kikerdezo2-ear</name>
+    <parent>
+        <artifactId>Kikerdezo2</artifactId>
+        <groupId>com.danubiusinfo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>  
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>   
+                 <version>6</version>
+                 <defaultLibBundleDir>lib</defaultLibBundleDir>                 
+                <!--    <source>1.7</source>-->
+                <!--    <target>1.7</target>   -->
+                        <modules>
+                            <ejbModule>
+                                <groupId>com.danubiusinfo</groupId>
+                                <artifactId>Kikerdezo2-ejb</artifactId>
+                            </ejbModule>  
+                            <webModule>
+                                <groupId>com.danubiusinfo</groupId>
+                                <artifactId>Kikerdezo2-web</artifactId>
+                            </webModule>
+                        </modules>
+                    </configuration>    
+            </plugin>         
+        </plugins>
+    </build>      
+    <dependencies>
+        <dependency>
+            <groupId>com.danubiusinfo</groupId>
+            <artifactId>Kikerdezo2-ejb</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.danubiusinfo</groupId>
+            <artifactId>Kikerdezo2-web</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>          
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ejb</groupId>
+            <artifactId>ejb-api</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+    <groupId>org.apache.openjpa</groupId>
+    <artifactId>openjpa-persistence-jdbc</artifactId>
+    <version>2.4.1</version>
+</dependency>
+    </dependencies>   
+</project>

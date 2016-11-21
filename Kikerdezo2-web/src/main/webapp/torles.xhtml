@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://xmlns.jcp.org/jsf/core">  
+    <head>
+        <title>Szó törlés</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+     <h:body>         
+           <h3>Melyik szót töröljük?</h3>                          
+        <h:form>                   
+    
+            <h:inputText   value="#{update.id}" required="true" requiredMessage="id is mandatory." />    
+            <br/>     
+            <br/>
+            <br/>
+            <br/>
+            <h:commandButton value="Mehet" class="button" action="#{update.deleteWord(update.id)}" />     
+        </h:form>    
+    </h:body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+    <head>
+        <title>Szófelvitel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>                
+    </head>
+    <h:body>        
+        <h:form>
+            <h:outputText value="CategId"/>
+            <h:inputText  value="#{insertBean.categId}" required="true" requiredMessage="id is mandatory."/>          
+            <br/>          
+            <h:outputText value="LangId"/>
+            <h:inputText  value="#{insertBean.langId}" required="true" requiredMessage="id is mandatory."/>          
+            <br/>          
+            <h:outputText value="Idegen szó"/>
+            <h:inputText  value="#{insertBean.fMean}" required="true" requiredMessage="id is mandatory."/>          
+            <br/>          
+            <h:outputText value="Magyar jelentés 1"/>
+            <h:inputText  value="#{insertBean.hMean1}" required="true" requiredMessage="id is mandatory."/>          
+            <br/>          
+            <h:outputText value="Magyar jelentés 2"/>
+            <h:inputText  value="#{insertBean.hMean2}" />          
+            <br/>          
+            <br/>
+            <h:commandButton value="Felvitel" class="button" action="#{insertBean.runInsert()}" />      
+        </h:form>   
+         <a href="index.xhtml"><input type="button" value="Főmenü" /></a>  
+    </h:body>
+</html>
