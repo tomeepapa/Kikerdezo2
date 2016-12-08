@@ -33,10 +33,10 @@ public class LangResource {  // bean prammal megoldva
     
      @GET
     // @Produces(MediaType.APPLICATION_JSON)    // xml kimenet alap, JSON-hoz jAR kell: jersey media moxy
-    public List<Language> getAllLangName(@BeanParam LanguageFilterBean filterbean){
+    public List<Language> getAllLangName(){
         
           List<Language> selectedLangp = new ArrayList<>();
-          selectedLangp = commonController.getAllLanguageName(filterbean.getStart(),filterbean.getSize());
+          selectedLangp = commonController.getAllLanguageName();
           return selectedLangp;
     
     }

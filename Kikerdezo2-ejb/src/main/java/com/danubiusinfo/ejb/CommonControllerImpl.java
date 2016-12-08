@@ -144,10 +144,10 @@ public class CommonControllerImpl implements CommonController {
     }
 
     @Override
-    public List<Words> getAllPaginated(int categId, int start, int size) {
+    public List<Words> getAllPaginated(int langId, int start, int size) {
 
-        Query qry = em.createNamedQuery("Words.findByCategId", Words.class)
-                .setParameter("categId", categId);
+        Query qry = em.createNamedQuery("Words.findAllFromLang", Words.class)
+                .setParameter("langId", langId);
 
         List<Words> words = qry.getResultList();
 
@@ -156,12 +156,12 @@ public class CommonControllerImpl implements CommonController {
     }
 
     @Override
-    public List<Language> getAllLanguageName(int start, int size) {
+    public List<Language> getAllLanguageName() {
 
         Query qry = em.createNamedQuery("Language.findAllFromLang", Language.class);
         List<Language> langs = qry.getResultList();
 
-        return langs.subList(start, size);
+        return langs;
     }
 
 }

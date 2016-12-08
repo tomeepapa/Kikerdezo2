@@ -27,7 +27,7 @@ public interface CommonController {
     public List<Words> getAllLang(int langId);
     public Words createWord(String hMean1, String hMean2, String fMean, int categId, int langId);
     public List<Words> getAllPaginated(int categI, int start, int size);
-    public List<Language> getAllLanguageName(int start, int size);
+    public List<Language> getAllLanguageName();
     
     
 }

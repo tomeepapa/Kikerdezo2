@@ -6,6 +6,7 @@
 package com.danubiusinfo.resources;
 
 import com.danubiusinfo.ejb.CommonController;
+import com.danubiusinfo.entity.Language;
 import com.danubiusinfo.entity.Words;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -47,16 +48,42 @@ public class WordsResources {
             selectedLang = commonController.getAllLang(langId);
             return selectedLang;
         }
-        if (start >= 0 && size >= 0) {
+        if (langId > 0 && start >= 0 && size >= 0) {
             List<Words> selectedLangpginted = new ArrayList<>();
-            selectedLangpginted = commonController.getAllPaginated(1, start, size);
-            return selectedLangpginted;
-        }
+            selectedLangpginted = commonController.getAllPaginated(langId, start, size);
+            return selectedLangpginted;}
+        
         List<Words> selectedCategWords = new ArrayList<>();
         selectedCategWords = commonController.getAllFromCateg(1);
 
         return selectedCategWords;
     }
+    
+    @GET
+    @Path("/p")  
+    public List<Words> getAllWordP(@QueryParam("langId") int langId, 
+            @QueryParam("start") int start,
+            @QueryParam("size") int size) {
+
+
+            List<Words> selectedLangpginted = new ArrayList<>();
+            selectedLangpginted = commonController.getAllPaginated(langId, start, size);
+            return selectedLangpginted;}
+    
+    
+    @GET
+    @Path("/l")  
+    public List<Language> getAllLanguageName() {
+
+
+            List<Language> allLang = new ArrayList<>();
+            allLang = commonController.getAllLanguageName();
+            return allLang;
+    }
+    
+    
+    
+    
 
     @POST
 //    @Consumes(MediaType.APPLICATION_JSON)
@@ -95,7 +122,7 @@ public class WordsResources {
     @Path("/{id}")
 //    @Consumes(MediaType.APPLICATION_JSON)
 //    @Produces(MediaType.APPLICATION_JSON)
-    public String updateWord(@PathParam("id") int id, Words json) {
+    public Words updateWord(@PathParam("id") int id, Words json) {
 
         json.setId(id);
         String hMean1 = json.gethMean1();
@@ -104,7 +131,7 @@ public class WordsResources {
 
         commonController.updateWord(id, hMean1, hMean2, fMean);
 
-        return "Sikeres módosítás!";
+        return json;
     }
 
     @DELETE
